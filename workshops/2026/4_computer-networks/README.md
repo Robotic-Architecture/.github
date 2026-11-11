@@ -1,8 +1,9 @@
 # Réseaux informatiques pour systèmes robotiques
 
-**Durée : 2 heures**
-**Public : Étudiants ingénieurs en robotique – dernière année**
-**Environnement : Ubuntu 24.04 / Python 3 / ROS 2**
+> [!NOTE]
+> **Durée : 2 heures**
+> **Public : Étudiants ingénieurs en robotique – dernière année**
+> **Environnement : Ubuntu 24.04 / Python 3 / ROS 2**
 
 ## Objectifs pédagogiques
 
@@ -30,8 +31,8 @@ Les exercices doivent être réalisés dans l'ordre proposé afin de progresser 
 | 02 | Configuration réseau | [Accéder à la fiche](02-tcp_udp_protocols.md) |
 | 03 | TCP et UDP | [Accéder à la fiche](03-basic_commands_and_nmap.md) |
 | 04 | Commandes réseau et Nmap | [Accéder à la fiche](04-network_analysis_with_wireshark.md) |
-| 05 | Wireshark | [Accéder à la fiche](05-network_and_ros2.md) |
-| 06 | ROS 2 et réseau | [Accéder à la fiche](06-dns_dhcp_ports_filtering.md) |
+| 05 | ROS 2 et réseau | [Accéder à la fiche](05-dns_dhcp_ports_filtering.md) |
+| 06 | Wireshark | [Accéder à la fiche](06-network_and_ros2.md) | 
 | 07 | Ports et filtrage | [Accéder à la fiche](07-synthesis_exercise.md) |
 
 Les illustrations utilisées dans les fiches sont regroupées dans le dossier `img/`. Les scripts Python et leurs corrections sont disponibles dans le dossier `scripts/`.
