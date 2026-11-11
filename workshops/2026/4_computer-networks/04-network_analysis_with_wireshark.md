@@ -32,6 +32,11 @@ L'interface de Wireshark est composée de trois zones :
 2. **Packet Details** : détails du paquet sélectionné et de ses différentes couches protocolaires.
 3. **Packet Bytes** : représentation des données brutes en hexadécimal et ASCII.
 
+<div align="center">
+  <h3>Interface Wireshark</h3>
+  <img src="img/wireshark_ui.png" width="600">
+</div>
+
 ## 4.3. Réaliser une capture
 
 1. Ouvrir Wireshark.
@@ -59,8 +64,10 @@ Wireshark propose des filtres permettant de sélectionner les paquets qui nous i
 ## 4.5. Analyser une trame
 
 Sélectionner une trame TCP ou UDP et observer les différents niveaux d'encapsulation.
-
-![Exemple de décomposition d'une trame réseau](img/encapsulation_reseau.png)
+<div align="center">
+  <h3>Exemple de décomposition d'une trame réseau</h3>
+  <img src="img/Ethernet_II_Frame_Structure.png" width="600">
+</div>
 
 Les principales informations à identifier sont :
 
