@@ -1,8 +1,8 @@
-# 6. DNS, DHCP, ports et filtrage
+# 5. DNS, DHCP, ports et filtrage
 > [!NOTE]
 > **Durée : 10 minutes**
 
-## 6.1. Les services réseau
+## 5.1. Les services réseau
 
 ### DHCP — Dynamic Host Configuration Protocol
 
@@ -44,7 +44,7 @@ La passerelle permet à une machine de communiquer avec des réseaux extérieurs
 
 Elle correspond généralement à l'adresse IP du routeur local.
 
-## 6.2. Ports réseau
+## 5.2. Ports réseau
 
 Une adresse IP permet d'identifier une interface réseau. Un port permet d'identifier un service ou une application sur cette machine.
 
@@ -61,7 +61,7 @@ Exemples :
 
 Un service doit écouter sur un port pour pouvoir recevoir des communications.
 
-## 6.3. Firewall et filtrage
+## 5.3. Firewall et filtrage
 
 Un firewall (pare-feu) permet de contrôler les communications réseau entrantes et sortantes.
 
@@ -72,31 +72,58 @@ Il peut notamment autoriser ou bloquer :
 - Une direction de communication.
 
 ### Exemple avec UFW
+UFW (*Uncomplicated Firewall*) est un outil simplifié de gestion du firewall sous Ubuntu. Il permet de contrôler les communications entrantes et sortantes.
 
-UFW (*Uncomplicated Firewall*) est un outil simplifié de gestion du firewall sous Ubuntu.
-
-Afficher son état :
+**1. Vérifier l'état du firewall**
 
 ```bash
 sudo ufw status
 ```
 
-Autoriser le port SSH :
+- ⭐ Quel est l'état actuel du firewall ? Faire une capture d'écran du résultat.
+
+**2. Activer le firewall**
+
+```bash
+sudo ufw enable
+```
+
+**3. Autoriser le port SSH**
 
 ```bash
 sudo ufw allow 22/tcp
 ```
 
-Autoriser le serveur TCP Python :
+Cette règle autorise les connexions SSH entrantes sur le port TCP 22.
+
+- ⭐ Afficher les règles du firewall et faire une capture d'écran montrant que le port 22 est autorisé.
+
+**4. Autoriser le serveur TCP Python**
 
 ```bash
 sudo ufw allow 5000/tcp
 ```
 
-Bloquer le port UDP 5001 :
+Cette règle autorise les connexions entrantes vers un serveur utilisant le port TCP 5000.
+
+- ⭐ Autoriser le port 5000, puis vérifier que la règle apparaît dans la liste des règles du firewall. Faire une capture d'écran.
+
+**5. Bloquer le port UDP 5001**
 
 ```bash
 sudo ufw deny 5001/udp
 ```
+
+Cette règle bloque les communications entrantes utilisant le protocole UDP sur le port 5001.
+
+- ⭐ Ajouter cette règle et faire une capture d'écran montrant les trois règles configurées.
+
+**6. Consulter l'ensemble des règles**
+
+```bash
+sudo ufw status numbered
+```
+
+- ⭐ Réaliser une capture d'écran finale montrant l'état du firewall et l'ensemble des règles configurées. Ajouter cette capture au compte rendu PDF.
 
 **Attention :** un port autorisé par le firewall ne garantit pas que le service soit accessible. Il faut également que le service soit actif, qu'il écoute sur la bonne interface et que le routage fonctionne.
