@@ -79,5 +79,5 @@ The SD card is the only disk of the Raspberry, there is no internal storage.
 > Carefully write username, hostname and password to avoid losing access to your Raspberry.
 
 ## Validation
-
-- ⭐ Take a screenshot of your computer screen showing the ssh connection to the raspberry and its output
+> [!IMPORTANT]
+> - ⭐ Take a screenshot of your computer screen showing the ssh connection to the raspberry and its output
