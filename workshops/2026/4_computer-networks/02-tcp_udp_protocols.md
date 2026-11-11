@@ -126,4 +126,4 @@ python3 scripts/client_udp.py
 > - ⭐ Pourquoi n'utilise-t-on pas `accept()` en UDP ?
 > - ⭐ Quel port est utilisé par le serveur TCP ?
 > - ⭐ Quel port est utilisé par le serveur UDP ?
-> - ⭐ Est-il possible d'envoyer plusieurs messages UDP sans établir de connexion préalable ?
+> - ⭐ Expliquez avec vos mots (pas d'aide de Claude,ChatGPT ou autre sur cette question, le but est d'expliquer ce que vous avez compris pour se l'approprier)
