@@ -1,6 +1,6 @@
 # 3. Commandes réseau et Nmap
-
-**Durée : 15 minutes**
+> [!NOTE]
+> **Durée : 15 minutes**
 
 Ubuntu fournit plusieurs commandes permettant de connaître la configuration réseau d'une machine et de diagnostiquer des problèmes de communication.
 
@@ -84,13 +84,12 @@ Identifier les services associés aux ports :
 ```bash
 nmap -sV 192.168.1.10
 ```
-
-## 3.3. Exercice
-
-1. Afficher l'adresse IP de votre machine.
-2. Identifier votre passerelle réseau.
-3. Tester la communication avec cette passerelle à l'aide de `ping`.
-4. Scanner votre propre machine avec Nmap.
-5. Identifier les ports ouverts avec `ss -tuln`.
+> [!CAUTION]
+> ## 3.3. Exercice
+> - ⭐ 1. Afficher l'adresse IP de votre machine.
+> - ⭐ 2. Identifier votre passerelle réseau.
+> - ⭐ 3. Tester la communication avec cette passerelle à l'aide de `ping`.
+> - ⭐ 4. Scanner votre propre machine avec Nmap.
+> - ⭐ 5. Identifier les ports ouverts avec `ss -tuln`.
 
 **Remarque :** ne scannez que les machines du réseau de TP ou celles pour lesquelles vous disposez d'une autorisation.
