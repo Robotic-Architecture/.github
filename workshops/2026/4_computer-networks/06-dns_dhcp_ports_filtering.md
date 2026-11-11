@@ -1,6 +1,6 @@
 # 6. DNS, DHCP, ports et filtrage
-
-**Durée : 10 minutes**
+> [!NOTE]
+> **Durée : 10 minutes**
 
 ## 6.1. Les services réseau
 
