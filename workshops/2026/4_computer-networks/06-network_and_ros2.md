@@ -1,8 +1,9 @@
-# 5. Comment ROS 2 utilise le réseau ?
+# 6. Comment ROS 2 utilise le réseau ?
 
-**Durée : 15 minutes**
+> [!NOTE]
+>**Durée : 15 minutes**
 
-## 5.1. Architecture de communication
+## 6.1. Architecture de communication
 
 ROS 2 permet de faire communiquer plusieurs nœuds, potentiellement exécutés sur des machines différentes.
 
@@ -20,7 +21,7 @@ Le fonctionnement général est le suivant :
 
 Les implémentations DDS classiques utilisent généralement UDP/IP pour les échanges de données, mais le transport exact dépend de l'implémentation et de sa configuration.
 
-## 5.2. Exemple : deux machines ROS 2
+## 6.2. Exemple : deux machines ROS 2
 
 Imaginons deux machines connectées au même switch :
 
@@ -61,12 +62,13 @@ Définir un domaine :
 export ROS_DOMAIN_ID=10
 ```
 
-## 5.3. Questions
+> [!CAUTION]
+> ## 6.3. Questions
+> - ⭐ 1. Comment les machines découvrent-elles les nœuds ROS 2 présents sur le réseau ?
+> - ⭐ 2. Est-il nécessaire de créer manuellement une connexion TCP entre chaque nœud ?
+> - ⭐ 3. Que se passe-t-il si deux machines utilisent des `ROS_DOMAIN_ID` différents ?
+> - ⭐ 4. Pourquoi un firewall peut-il empêcher la découverte des nœuds ROS 2 ?
+> - ⭐ 5. Quel est l'intérêt de pouvoir exécuter les nœuds sur plusieurs machines ?
 
-1. Comment les machines découvrent-elles les nœuds ROS 2 présents sur le réseau ?
-2. Est-il nécessaire de créer manuellement une connexion TCP entre chaque nœud ?
-3. Que se passe-t-il si deux machines utilisent des `ROS_DOMAIN_ID` différents ?
-4. Pourquoi un firewall peut-il empêcher la découverte des nœuds ROS 2 ?
-5. Quel est l'intérêt de pouvoir exécuter les nœuds sur plusieurs machines ?
-
-**À retenir :** ROS 2 ne repose pas simplement sur une communication client-serveur. DDS gère la découverte et les échanges distribués entre les participants.
+> [!TIP]
+> **À retenir :** ROS 2 ne repose pas simplement sur une communication client-serveur. DDS gère la découverte et les échanges distribués entre les participants.
