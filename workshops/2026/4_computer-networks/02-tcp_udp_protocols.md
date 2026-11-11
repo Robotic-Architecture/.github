@@ -1,7 +1,6 @@
-
 # 2. Protocoles TCP et UDP
-
-**Durée : 25 minutes**
+> [!NOTE]
+> **Durée : 25 minutes**
 
 ## 2.1. Introduction
 
@@ -23,8 +22,10 @@ TCP assure notamment :
 
 **Établissement d'une connexion TCP :**
 
-![Établissement d'une connexion TCP](img/tcp_handshake.png)
-
+<div align="center">
+  <h3>Établissement d'une connexion TCP</h3>
+  <img src="img/tcpHandshake.jpg" width="400">
+</div>
 L'établissement de la connexion utilise un mécanisme appelé *Three-Way Handshake* :
 
 1. SYN : le client demande une connexion.
@@ -58,6 +59,10 @@ Caractéristiques :
 | Contrôle de congestion | Oui | Non, nativement |
 | Surcharge protocolaire | Plus importante | Plus faible |
 
+<div align="center">
+  <h3>Comparaison TCP / UDP</h3>
+  <img src="img/udpVStcp.png" width="600">
+</div>
 ### Exemples en robotique
 
 | Application | Protocole envisageable |
@@ -96,7 +101,7 @@ python3 scripts/server_tcp.py
 python3 scripts/client_tcp.py
 ```
 
-4. Observer les messages échangés.
+⭐ 4. Observer les messages échangés et prenez un screenshot.
 5. Identifier le moment où la connexion est établie.
 
 ### Exercice 2 — Communication UDP
@@ -115,13 +120,13 @@ python3 scripts/server_udp.py
 python3 scripts/client_udp.py
 ```
 
-3. Observer les messages échangés.
+⭐ 3. Observer les messages échangés et prenez un screenshot.
 
-### Questions
-
-- Quelle différence observez-vous entre les deux communications ?
-- Quel est le rôle de la fonction `accept()` en TCP ?
-- Pourquoi n'utilise-t-on pas `accept()` en UDP ?
-- Quel port est utilisé par le serveur TCP ?
-- Quel port est utilisé par le serveur UDP ?
-- Est-il possible d'envoyer plusieurs messages UDP sans établir de connexion préalable ?
+> [!CAUTION]
+> ### Questions
+> - ⭐ Quelle différence observez-vous entre les deux communications ?
+> - ⭐ Quel est le rôle de la fonction `accept()` en TCP ?
+> - ⭐ Pourquoi n'utilise-t-on pas `accept()` en UDP ?
+> - ⭐ Quel port est utilisé par le serveur TCP ?
+> - ⭐ Quel port est utilisé par le serveur UDP ?
+> - ⭐ Est-il possible d'envoyer plusieurs messages UDP sans établir de connexion préalable ?
