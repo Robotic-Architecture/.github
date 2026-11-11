@@ -26,13 +26,13 @@ Les exercices doivent être réalisés dans l'ordre proposé afin de progresser 
 
 | Fiche | Thématique | Lien |
 |---|---|---|
-| 01 | Architecture réseau | [Accéder à la fiche](01_architecture_reseau/README.md) |
-| 02 | Configuration réseau | [Accéder à la fiche](02_configuration_reseau/README.md) |
-| 03 | TCP et UDP | [Accéder à la fiche](03_tcp_udp/README.md) |
-| 04 | Commandes réseau et Nmap | [Accéder à la fiche](04_commandes_nmap/README.md) |
-| 05 | Wireshark | [Accéder à la fiche](05_wireshark/README.md) |
-| 06 | ROS 2 et réseau | [Accéder à la fiche](06_ros2_reseau/README.md) |
-| 07 | Ports et filtrage | [Accéder à la fiche](07_ports_filtrage/README.md) |
+| 01 | Architecture réseau | [Accéder à la fiche](01-network_architecture.md) |
+| 02 | Configuration réseau | [Accéder à la fiche](02-tcp_udp_protocols.md) |
+| 03 | TCP et UDP | [Accéder à la fiche](03-basic_commands_and_nmap.md) |
+| 04 | Commandes réseau et Nmap | [Accéder à la fiche](04-network_analysis_with_wireshark.md) |
+| 05 | Wireshark | [Accéder à la fiche](05-network_and_ros2.md) |
+| 06 | ROS 2 et réseau | [Accéder à la fiche](06_dns_dhcp_ports_filtering.md) |
+| 07 | Ports et filtrage | [Accéder à la fiche](07-synthesis_exercise.md) |
 
 Les illustrations utilisées dans les fiches sont regroupées dans le dossier `img/`. Les scripts Python et leurs corrections sont disponibles dans le dossier `scripts/`.
 
