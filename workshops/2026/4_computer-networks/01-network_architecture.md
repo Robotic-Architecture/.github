@@ -68,20 +68,14 @@ Un serveur n'est pas nécessairement un équipement réseau dédié : il peut si
 > [!CAUTION]
 > 
 > ## 1.3. Exercice — Concevoir un réseau robotique
-
 > ### Mise en situation
-
 > Une équipe développe un système de robotique mobile composé de :
 > - Deux robots autonomes.
 > - Un ordinateur de supervision.
 > - Un serveur de stockage.
-
 > Les robots et l'ordinateur doivent pouvoir communiquer entre eux. Le serveur doit également être accessible depuis les trois autres machines.
-
 > Enfin, l'ensemble du système doit pouvoir accéder à Internet.
-
 > ### Travail demandé
-
 > - ⭐ 1. Dessiner une architecture réseau permettant de connecter les quatre machines.
 > - ⭐ 2. Identifier les équipements réseau nécessaires.
 > - ⭐ 3. Indiquer quel composant doit être placé entre chaque liaison.
