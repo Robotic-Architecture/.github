@@ -1,6 +1,12 @@
 # 4. Analyse réseau avec Wireshark
 
-**Durée : 20 minutes**
+> [!NOTE]
+> **Durée : 20 minutes**
+
+<div align="center">
+  <h3>Wireshark</h3>
+  <img src="img/wireshark_logo.png" width="600">
+</div>
 
 ## 4.1. Présentation
 
@@ -17,8 +23,6 @@ Installation :
 ```bash
 sudo apt install wireshark
 ```
-
-![Interface Wireshark](img/wireshark_interface.png)
 
 ## 4.2. Les trois zones principales
 
@@ -65,11 +69,11 @@ Les principales informations à identifier sont :
 - **TCP / UDP** : ports source et destination.
 - **Application** : données transmises.
 
-## 4.6. Questions
-
-1. Quelle est l'adresse IP source ?
-2. Quelle est l'adresse IP destination ?
-3. Quel est le port source ?
-4. Quel est le port destination ?
-5. Quelle différence observez-vous entre une trame TCP et une trame UDP ?
-6. Peut-on retrouver le contenu du message envoyé par le client Python ?
+> [!CAUTION]
+> ## 4.6. Questions
+> - ⭐ 1. Quelle est l'adresse IP source ?
+> - ⭐ 2. Quelle est l'adresse IP destination ?
+> - ⭐ 3. Quel est le port source ?
+> - ⭐ 4. Quel est le port destination ?
+> - ⭐ 5. Quelle différence observez-vous entre une trame TCP et une trame UDP ?
+> - ⭐ 6. Peut-on retrouver le contenu du message envoyé par le client Python ?
