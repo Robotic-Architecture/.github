@@ -44,9 +44,6 @@ Caractéristiques :
 - Pas de garantie d'ordre.
 - Faible surcharge protocolaire.
 
-**Communication UDP :**
-
-![Communication UDP](img/udp_communication.png)
 
 ## 2.2. Comparaison TCP / UDP
 
