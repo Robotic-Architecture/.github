@@ -1,80 +1,47 @@
-# Basic Network Equipment: Hub, Switch and Router
+# Réseaux informatiques pour systèmes robotiques
 
-This guide explains the differences between the main network devices: hubs, switches, routers and access points.
+**Durée : 2 heures**
+**Public : Étudiants ingénieurs en robotique – dernière année**
+**Environnement : Ubuntu 24.04 / Python 3 / ROS 2**
 
-## 1. Hub
+## Objectifs pédagogiques
 
-A **hub** connects multiple devices within the same local network.
+À l'issue de ce TP, vous serez capables de :
 
-When a device sends a message, the hub broadcasts it to **all connected devices**, regardless of the intended recipient.
+- Comprendre les composants d'une architecture réseau.
+- Distinguer les protocoles TCP et UDP et leurs cas d'utilisation.
+- Développer une communication client-serveur simple en Python.
+- Utiliser les commandes Linux pour diagnostiquer un réseau.
+- Découvrir les outils Nmap et Wireshark.
+- Comprendre comment ROS 2 utilise le réseau pour communiquer entre plusieurs machines.
+- Comprendre le rôle du DNS, du DHCP, des ports et du filtrage réseau.
 
-- Operates at Layer 1 (Physical Layer) of the OSI model.
-- Does not identify destination devices.
-- Shares bandwidth between all connected devices.
-- Mostly obsolete today.
+---
 
-## 2. Switch
+# Fiches de TP
 
-A **switch** connects multiple devices within the same local network.
+Le TP est organisé en plusieurs fiches thématiques contenant les explications nécessaires, les manipulations à réaliser et les exercices associés.
 
-Unlike a hub, it learns the MAC addresses of connected devices and forwards Ethernet frames only to the appropriate destination port (when the destination is known).
+Les exercices doivent être réalisés dans l'ordre proposé afin de progresser des fondamentaux des réseaux jusqu'à leur utilisation dans un système robotique distribué.
 
-- Operates primarily at Layer 2 (Data Link Layer).
-- Uses MAC addresses to identify devices.
-- Reduces unnecessary network traffic.
-- Commonly used to connect computers, robots, sensors and servers.
-
-## 3. Router
-
-A **router** connects different IP networks and forwards packets between them.
-
-For example, a router allows devices on a local network to communicate with the Internet.
-
-- Operates at Layer 3 (Network Layer).
-- Uses IP addresses to route packets.
-- Connects different networks.
-- Often provides DHCP and NAT services.
-
-## 4. Access Point (AP)
-
-An **access point** allows wireless devices to connect to a wired local network using Wi-Fi.
-
-It acts as a bridge between wireless and wired devices.
-
-- Primarily operates at Layer 2.
-- Connects Wi-Fi clients to an Ethernet network.
-- Does not necessarily provide routing or DHCP services.
-
-## 5. Summary
-
-| Device | Main function | OSI Layer |
+| Fiche | Thématique | Lien |
 |---|---|---|
-| Hub | Broadcasts data to all ports | 1 |
-| Switch | Connects devices within a LAN | 2 |
-| Router | Connects different IP networks | 3 |
-| Access Point | Connects Wi-Fi devices to a LAN | 2 |
+| 01 | Architecture réseau | [Accéder à la fiche](01_architecture_reseau/README.md) |
+| 02 | Configuration réseau | [Accéder à la fiche](02_configuration_reseau/README.md) |
+| 03 | TCP et UDP | [Accéder à la fiche](03_tcp_udp/README.md) |
+| 04 | Commandes réseau et Nmap | [Accéder à la fiche](04_commandes_nmap/README.md) |
+| 05 | Wireshark | [Accéder à la fiche](05_wireshark/README.md) |
+| 06 | ROS 2 et réseau | [Accéder à la fiche](06_ros2_reseau/README.md) |
+| 07 | Ports et filtrage | [Accéder à la fiche](07_ports_filtrage/README.md) |
 
-## 6. Example: A robotic system
+Les illustrations utilisées dans les fiches sont regroupées dans le dossier `img/`. Les scripts Python et leurs corrections sont disponibles dans le dossier `scripts/`.
 
-A typical robotic setup might look like this:
+---
 
-```text
-                 INTERNET
-                     |
-                  ROUTER
-                     |
-                   SWITCH
-                /    |     \
-               /     |      \
-          COMPUTER  ROBOT  SERVER
-                     |
-                ACCESS POINT
-                     |
-                 WIFI ROBOT
-```
+# Ressources complémentaires
 
-In a robotics environment:
-- A **switch** connects multiple robots and computers through Ethernet.
-- A **router** allows communication between different networks.
-- An **access point** allows robots to communicate over Wi-Fi.
-- A **hub** is generally avoided because it broadcasts all traffic to every connected device.
+- [Documentation ROS 2](https://docs.ros.org/en/jazzy/)
+- [Documentation Wireshark](https://www.wireshark.org/docs/)
+- [Documentation Nmap](https://nmap.org/book/man.html)
+- [Documentation Python — socket](https://docs.python.org/3/library/socket.html)
+- [Documentation Ubuntu — Firewall](https://documentation.ubuntu.com/server/how-to/security/firewalls/)
