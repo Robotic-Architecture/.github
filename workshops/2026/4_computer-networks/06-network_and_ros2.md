@@ -11,7 +11,7 @@ Contrairement à une architecture client-serveur classique, ROS 2 s'appuie sur u
 
 <div align="center">
   <h3>Architecture de communication ROS 2 et DDS</h3>
-  <img src="img/ros_architecture.jpg" width="400">
+  <img src="img/ros-architecture.jpg" width="500">
 </div>
 
 Le fonctionnement général est le suivant :
