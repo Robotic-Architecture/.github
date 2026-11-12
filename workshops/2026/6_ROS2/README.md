@@ -1,4 +1,4 @@
-# TP — Prise en main de ROS 2 avec Mino
+# Atelier — Prise en main de ROS 2 avec Mino
 
 > [!NOTE]
 > **Durée : 1 h 30 à 2 h**
@@ -74,8 +74,6 @@ ros2 interface show nom_du_type
 1. Identifier les topics contenant les données des capteurs.
 2. Récupérer les mesures des différents LiDAR.
 3. Identifier et récupérer les données de l'IMU.
-4. Récupérer les données de vitesse du robot.
-5. Identifier les grandeurs physiques contenues dans les messages.
 
 Vous pourrez utiliser les commandes suivantes pour explorer les données :
 
