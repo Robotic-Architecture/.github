@@ -9,7 +9,10 @@ ROS 2 permet de faire communiquer plusieurs nœuds, potentiellement exécutés s
 
 Contrairement à une architecture client-serveur classique, ROS 2 s'appuie sur un middleware de communication distribué appelé DDS (*Data Distribution Service*).
 
-![Architecture de communication ROS 2 et DDS](img/ros2_dds_architecture.png)
+<div align="center">
+  <h3>Architecture de communication ROS 2 et DDS</h3>
+  <img src="img/ros_architecture.jpg" width="400">
+</div>
 
 Le fonctionnement général est le suivant :
 
