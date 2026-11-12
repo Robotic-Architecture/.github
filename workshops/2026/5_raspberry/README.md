@@ -27,16 +27,24 @@ The SD card is the only disk of the Raspberry, there is no internal storage.
 
 - Keep the micro SD card plugged in your computer, and open `system-boot`.
 - Edit the file `network-config` :
-    ```
-    wifis:
+```
+network:
+  version: 2
+
+  ethernets:
+    eth0:
+      dhcp4: true
+      optional: true
+
+  wifis:
     wlan0:
       optional: true
       access-points:
         "SSID":
           password: "MDP"
       dhcp4: true
-      regulatory-domain: FR
-    ```
+    regulatory-domain: FR
+```
     > [!NOTE]
     > Set SSID and MDP of an accessible network. Using your phone access point can be simpler for the next steps.
     >
