@@ -44,6 +44,25 @@ The SD card is the only disk of the Raspberry, there is no internal storage.
 
     > [!CAUTION]
     > Take care to only use spaces for indentation
+- After the first boot, the content of `network-config` fills a .yaml file in /etc/netplan of the `writable` partition :
+```
+network:
+  version: 2
+  ethernets:
+    eth0:
+      optional: true
+      dhcp4: true
+  wifis:
+    wlan0:
+      optional: true
+      dhcp4: true
+      regulatory-domain: "FR"
+      access-points:
+        "ARCHI_ROB":
+          auth:
+            key-management: "psk"
+            password: "ARCHI_ROB"
+```
 - Edit the file `user-data` and set :
     ```
     ssh_pwauth: true
