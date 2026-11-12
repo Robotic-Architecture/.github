@@ -18,6 +18,8 @@ The SD card is the only disk of the Raspberry, there is no internal storage.
 - Using a micro SD card reader, plug the micro SD card in your computer.
 - Right-click on the .img.xz file and open with the built-in Disk Image Writer.
 - Select the storage corresponding to the micro SD card and confirm.
+    > [!CAUTION]
+    > Do not write on your computer storage.
 
 <img src="disk-image-writer.png" width="600">
 
