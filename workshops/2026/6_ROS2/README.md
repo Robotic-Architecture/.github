@@ -30,6 +30,33 @@ printenv ROS_DISTRO
 
 La distribution attendue est `jazzy`.
 
+## 2.5 Lancement de ROS_TCP_ENDPOINT
+
+Dans un workspace de votre choix, clonez et compilez le dépôt ROS-TCP-Endpoint :
+
+```bash
+cd ros2_ws/
+git clone https://github.com/Unity-Technologies/ROS-TCP-Endpoint.git
+cd ROS-TCP-Endpoint
+git fetch origin
+git switch -c main-ros2 --track origin/main-ros2
+```
+
+Buildez et sourcez le package
+```bash
+colcon build
+source install/setup.bash
+```
+
+Lancez ensuite le serveur ROS-TCP-Endpoint :
+
+```bash
+ros2 run ros_tcp_endpoint default_server_endpoint
+```
+
+> [!CAUTION]
+> Vérifiez que le port `10000` est disponible avant de démarrer le serveur. Une seule instance de ROS-TCP-Endpoint doit fonctionner sur ce port à la fois.
+> 
 ## 3. Exploration du système ROS 2
 
 > [!NOTE]
@@ -112,7 +139,31 @@ Les caméras permettent de récupérer des images de l'environnement observé pa
 
 1. Identifier le topic contenant les images de la caméra.
 2. Identifier son type de message.
-3. Lancer RViz2 :
+
+> [!TIP]
+> **Conversion d'une image compressée en image brute (Raw)**
+>
+> Le flux vidéo publié par Unity est au format `CompressedImage` (JPEG). Pour pouvoir l'afficher dans RViz ou l'utiliser avec des outils ROS 2 attendant un message `sensor_msgs/msg/Image`, il faut le convertir au format brut (`Raw`).
+>
+> Installer le paquet nécessaire :
+>
+> ```bash
+> sudo apt install ros-jazzy-compressed-image-transport
+> ```
+>
+> Lancer ensuite le nœud de conversion :
+>
+> ```bash
+> ros2 run image_transport republish --ros-args \
+>   -p in_transport:=compressed \
+>   -p out_transport:=raw \
+>   --remap in/compressed:=/mino/camera/image/compressed \
+>   --remap out:=/mino/camera/image
+> ```
+>
+> Le flux compressé `/mino/camera/image/compressed` sera alors converti et publié sur `/mino/camera/image` au format `sensor_msgs/msg/Image`.
+
+4. Lancer RViz2 :
 
 ```bash
 rviz2
