@@ -50,7 +50,7 @@ The available printers are Bambulab A1, we recommend the software [OrcaSlicer](h
 
 ### TODO
 > [!IMPORTANT]
-> **⭐ Print the previously design part**
+> **⭐ Print the previously design part ALTERNATIVELY you can take a screenshot of the sliced part in OrcaSlicer if the printers are not available**
 
 - Reopen the part "Reducer Coupling"
 - Export the part in .STL format in mm
