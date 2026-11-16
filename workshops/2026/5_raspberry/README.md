@@ -56,16 +56,16 @@ The SD card is the only disk of the Raspberry, there is no internal storage.
       regulatory-domain: FR
   ```
 
-  > [!CAUTION]
-  > Only use spaces for indentation
+> [!CAUTION]
+> Only use spaces for indentation
 
 - Edit the file `user-data` :
   - Enable SSH :
     ```
     ssh_pwauth: true
     ```
-  > [!NOTE]
-  > If you had error on first boot you can create the file `/etc/ssh/sshd_config.d/50-cloud-init.conf` and add the line `PasswordAuthentication yes`
+> [!NOTE]
+> If you had error on first boot you can create the file `/etc/ssh/sshd_config.d/50-cloud-init.conf` and add the line `PasswordAuthentication yes`
   
   - Change username and password :
     ```
