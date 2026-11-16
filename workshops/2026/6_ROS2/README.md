@@ -16,7 +16,7 @@ L'objectif est de manipuler ROS 2 pour récupérer les données des capteurs, vi
 ![Simulation du robot Mino dans Unity](img/mino-simulation.png)
 
 **Projet et téléchargement :**
-- [Télécharger la simulation Linux](https://github.com/tbelier/mino-unity-ros2/releases/tag/Linux-x86_64)
+- [Télécharger la simulation Linux](https://github.com/tbelier/mino-unity-ros2/releases/tag/v1.0.0)
 
 ## 2. Préparation
 
