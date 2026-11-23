@@ -9,4 +9,6 @@ https://docs.google.com/spreadsheets/d/114GwJVYrzvWO5Jqym2C0UedIeZ8R9dw4E8vfuHBl
 - Contrôler manuellement le robot pour faire la trajectoire demandé
 
 ## Lien du robot
-Wavego Pro Pi5 kit : https://www.waveshare.com/wavego-pro.htm?sku=32193
+Wavego Pro Pi5 kit :
+- https://www.waveshare.com/wavego-pro.htm?sku=32193
+- https://github.com/waveshareteam/WAVEGO_Pro/tree/main
