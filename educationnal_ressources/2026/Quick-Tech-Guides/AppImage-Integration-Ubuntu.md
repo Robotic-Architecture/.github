@@ -1,83 +1,89 @@
-# Ajouter une AppImage au menu des applications Ubuntu
+# Connexion SSH par nom d'hôte
 
-Ce guide explique comment rendre une application `.AppImage` accessible depuis la liste des applications GNOME, avec son logo.
+Ce guide permet de se connecter à un système Linux par son nom plutôt que par son adresse IP, même si celle-ci change. Dans cet exemple le nom de l'hôte choisi est pollux et le nom de l'utilisateur sur la raspberry est pi.
 
-## 1. Ranger l'AppImage
+## 1. Sur le système distant
 
-Créer un dossier pour les AppImages, puis déplacer le fichier dedans :
-
-```bash
-mkdir -p ~/Applications
-mv ~/Téléchargements/monapp.AppImage ~/Applications/
-chmod +x ~/Applications/monapp.AppImage
-```
-
-Remplacer `monapp.AppImage` par le nom réel du fichier.
-
-## 2. Installer le logo
-
-Si tu disposes d'un logo au format PNG (idéalement 256×256 ou 512×512) :
+Définir un nom d'hôte unique :
 
 ```bash
-mkdir -p ~/.local/share/icons
-cp logo.png ~/.local/share/icons/monapp.png
+sudo hostnamectl set-hostname pollux
 ```
 
-Le fichier `logo.png` doit être présent dans le dossier courant. Adapter son nom si nécessaire.
-
-## 3. Créer le raccourci `.desktop`
-
-Créer un fichier de raccourci dans le dossier des applications utilisateur :
+Sur Debian ou Ubuntu, installer et activer SSH et mDNS :
 
 ```bash
-nano ~/.local/share/applications/monapp.desktop
+sudo apt update
+sudo apt install openssh-server avahi-daemon
+sudo systemctl enable --now ssh avahi-daemon
 ```
 
-Y copier le contenu suivant :
-
-```ini
-[Desktop Entry]
-Version=1.0
-Type=Application
-Name=Mon Application
-Comment=Mon application AppImage
-Exec=/home/TON_USER/Applications/monapp.AppImage
-Icon=/home/TON_USER/.local/share/icons/monapp.png
-Terminal=false
-Categories=Utility;
-```
-
-Adapter les éléments suivants :
-
-- `Name` : nom affiché dans le menu.
-- `Exec` : chemin absolu vers l'AppImage.
-- `Icon` : chemin absolu vers le logo.
-- Remplacer `TON_USER` par ton nom d'utilisateur Linux (commande `whoami`).
-
-## 4. Actualiser le menu
-
-Exécuter :
+Vérifier le nom et l'utilisateur :
 
 ```bash
-update-desktop-database ~/.local/share/applications
+hostname
+whoami
 ```
 
-Ubuntu devrait ensuite détecter automatiquement le raccourci. L'application peut être recherchée depuis le menu des applications GNOME.
 
-## 5. (Optionnel) Extraire le logo de l'AppImage
+## 2. Depuis l'ordinateur client
 
-Certaines AppImages embarquent déjà leur icône. Depuis le dossier contenant l'AppImage :
+Les deux machines doivent être joignables sur le même réseau local.
 
 ```bash
-./monapp.AppImage --appimage-extract
+ssh pi@pollux.local
 ```
 
-Les fichiers extraits se trouvent dans `squashfs-root`. Chercher un fichier `.png` ou `.svg` correspondant au logo, puis le copier dans `~/.local/share/icons/`.
+Remplacer `pi` par le nom d'un utilisateur existant sur le système distant.
 
----
+> [!CAUTION]
+> ** dans le cas où ça n'a pas fonctionné **
+> Sur le robot, vérifie la configuration d'Avahi :
+> ```bash
+> grep -E '^(host-name|domain-name)=' /etc/avahi/avahi-daemon.conf
+> ```
+> 
+> Puis édite le fichier :
+> ```bash
+> sudo nano /etc/avahi/avahi-daemon.conf
+> ```
+> 
+> Dans la section [server], ajoute ou modifie :
+> ```bash
+> [server]
+> host-name=pollux
+> domain-name=local
+> ```
+> 
+> Ne crée pas une deuxième section [server] si elle existe déjà.
+> 
+> Redémarre Avahi :
+> ```bash
+> sudo systemctl restart avahi-daemon
+> systemctl status avahi-daemon
+> ```
+> 
+> Le journal doit maintenant indiquer :
+> ```bash
+> Host name is pollux.local
+> ```
+>
 
-## Résumé
+## 3. Utiliser un nom court
 
-- AppImage : `~/Applications/monapp.AppImage`
-- Logo : `~/.local/share/icons/monapp.png`
-- Raccourci : `~/.local/share/applications/monapp.desktop`
+Pour se connecter avec `ssh pi@pollux`, créer ou modifier le fichier `~/.ssh/config` sur le client :
+
+```sshconfig
+Host pollux
+    HostName pollux.local
+    User pi
+```
+
+Puis :
+
+```bash
+chmod 600 ~/.ssh/config
+ssh pollux
+```
+
+La commande `ssh pi@pollux` fonctionne également.
